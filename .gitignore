@@ -69,7 +69,6 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
-/.cursor
 
 # System Files
 .DS_Store
