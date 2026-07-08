@@ -52,7 +52,7 @@ todos:
     status: pending
   - id: a17
     content: A17 main.py e integracion del flujo principal (Federico)
-    status: pending
+    status: completed
   - id: a18
     content: A18 Finalizacion del programa (Santi)
     status: pending
