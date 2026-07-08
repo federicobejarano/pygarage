@@ -6,6 +6,8 @@ from src.validaciones import validar_opcion_menu
 
 from src.calculos import estado_descuento
 
+from src.menus import formatear_espacios_disponibles, pausar_para_continuar
+
 
 def mostrar_menu_principal():
     """Muestra el menu principal numerado con 7 opciones."""
@@ -67,6 +69,15 @@ def flujo_consultar_cliente(clientes):
     print(f"Nombre:{cliente['nombre']}")
     print(f"Horas acumuladas:{cliente['total_horas']}")
     print(estado_descuento(cliente["total_horas"], UMBRAL_HORAS_DESCUENTO))
+
+def flujo_consultar_espacios(espacios, ocupacion):
+    """Flujo completo para consultar espacios disponibles."""
+    disponibles = listar_disponibles(espacios, ocupacion)
+    total = len(espacios)
+    ocupados = len(ocupacion)
+    libres = total - ocupados
+    print(formatear_espacios_disponibles(disponibles, libres, ocupados, total))
+    pausar_para_continuar()
 
 def mostrar_menu_estadisticas():
     """Muestra el submenu de estadisticas con 4 opciones."""
