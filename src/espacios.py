@@ -1,9 +1,37 @@
-"""Operaciones sobre espacios del estacionamiento."""
+from src.archivos import leer_csv
+from src.contratos import RUTA_ESPACIOS
 
 
 def cargar_espacios():
     """Carga la configuracion de espacios desde el archivo CSV."""
-    return []
+    filas = leer_csv(RUTA_ESPACIOS)
+    espacios = []
+    codigos_vistos = []
+
+    for fila in filas:
+        codigo = fila["codigo"]
+        piso = fila["piso"]
+        numero = fila["numero"]
+
+        if not piso.isdigit() or not numero.isdigit():
+            print(f"Espacio invalido (piso o numero no numerico):{codigo}")
+            continue
+
+        if codigo in codigos_vistos:
+            print(f"Codigo de espacio duplicado, se ignora:{codigo}")
+            continue
+
+        codigos_vistos.append(codigo)
+        espacios.append({
+            "codigo": codigo,
+            "piso": int(piso),
+            "numero": int(numero),
+        })
+
+    if len(espacios) == 0:
+        print("Advertencia: no se cargaron espacios. Revise data/espacios.csv.")
+
+    return espacios
 
 
 def buscar_espacio(espacios, codigo):
