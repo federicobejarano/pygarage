@@ -23,9 +23,15 @@ def actualizar_por_egreso(estadisticas, fecha, horas):
 
 def calcular_porcentaje_ocupacion(ocupacion, espacios):
     """Calcula el porcentaje de espacios ocupados sobre el total."""
-    return 0.0
+    total = len(espacios)
+    if total == 0:
+        return 0.0
+    ocupados = len(ocupacion)
+    return ocupados * 100 / total
 
 
 def calcular_promedio(total_horas, cantidad_egresos):
     """Calcula el tiempo promedio de permanencia."""
-    return None
+    if cantidad_egresos == 0:
+        return None
+    return total_horas / cantidad_egresos

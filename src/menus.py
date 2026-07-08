@@ -1,5 +1,7 @@
 """Presentacion por consola y flujos de operaciones."""
 
+from src.estadisticas import calcular_porcentaje_ocupacion, calcular_promedio
+
 from src.validaciones import validar_opcion_menu
 
 
