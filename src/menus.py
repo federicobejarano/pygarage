@@ -170,20 +170,23 @@ def registrar_ingreso(espacios, clientes, ocupacion, estadisticas):
 
 def registrar_egreso(espacios, clientes, ocupacion, estadisticas):
     """Flujo completo para registrar el egreso de un vehiculo."""
-    codigo = input("Ingrese el codigo del espacio ocupado o 0 para cancelar: ").strip().upper()
-    if codigo == "0":
-        return ocupacion
-
-    while not validar_codigo_espacio(codigo, espacios):
-        print("El espacio ingresado no existe.")
+    while True:
         codigo = input("Ingrese el codigo del espacio ocupado o 0 para cancelar: ").strip().upper()
         if codigo == "0":
             return ocupacion
 
-    ingreso = obtener_ingreso_activo(ocupacion, codigo)
-    if ingreso is None:
-        print("No se puede registrar el egreso porque el espacio esta libre.")
-        return ocupacion
+        while not validar_codigo_espacio(codigo, espacios):
+            print("El espacio ingresado no existe.")
+            codigo = input("Ingrese el codigo del espacio ocupado o 0 para cancelar: ").strip().upper()
+            if codigo == "0":
+                return ocupacion
+
+        ingreso = obtener_ingreso_activo(ocupacion, codigo)
+        if ingreso is None:
+            print("No se puede registrar el egreso porque el espacio esta libre.")
+            continue
+
+        break
 
     dni = ingreso["dni"]
     fecha_hora_ingreso = ingreso["fecha_hora_ingreso"]
@@ -285,10 +288,12 @@ def flujo_consultar_cliente(clientes):
 def flujo_consultar_espacios(espacios, ocupacion):
     """Flujo completo para consultar espacios disponibles."""
     disponibles = listar_disponibles(espacios, ocupacion)
+    pisos = sorted({espacio["piso"] for espacio in espacios})
+    disponibles_por_piso = {piso: disponibles.get(piso, []) for piso in pisos}
     total = len(espacios)
     ocupados = len(ocupacion)
     libres = total - ocupados
-    print(formatear_espacios_disponibles(disponibles, libres, ocupados, total))
+    print(formatear_espacios_disponibles(disponibles_por_piso, libres, ocupados, total))
     pausar_para_continuar()
 
 

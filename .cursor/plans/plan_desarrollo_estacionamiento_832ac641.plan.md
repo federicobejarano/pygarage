@@ -58,7 +58,7 @@ todos:
     status: completed
   - id: a19
     content: A19 Pruebas de casos minimos (integracion)
-    status: pending
+    status: completed
   - id: a20
     content: A20 README y registro de uso de IA (Santi/Federico)
     status: pending

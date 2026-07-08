@@ -28,10 +28,10 @@ def estado_descuento(total_horas, umbral_horas):
     if total_horas >= umbral_horas:
         return "El cliente tiene descuento disponible."
     faltan = umbral_horas - total_horas
-    return f"Al cliente le faltan{faltan} horas para acceder al descuento."
+    return f"Al cliente le faltan {faltan} horas para acceder al descuento."
 
 
 def aplicar_descuento(importe, porcentaje_descuento):
     """Aplica el porcentaje de descuento sobre el importe."""
     descuento = importe * porcentaje_descuento / 100
-    return importe - descuento
+    return int(importe - descuento)
