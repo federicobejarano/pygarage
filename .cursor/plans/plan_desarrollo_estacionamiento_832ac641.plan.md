@@ -55,7 +55,7 @@ todos:
     status: completed
   - id: a18
     content: A18 Finalizacion del programa (Santi)
-    status: pending
+    status: completed
   - id: a19
     content: A19 Pruebas de casos minimos (integracion)
     status: pending

@@ -1,5 +1,6 @@
 """Presentacion por consola y flujos de operaciones."""
 
+import time
 from datetime import datetime
 
 from src.calculos import (
@@ -97,8 +98,9 @@ def pausar_para_continuar():
 
 
 def finalizar_programa():
-    """Muestra mensaje de cierre del programa."""
+    """Muestra mensaje de cierre y pausa breve antes de terminar."""
     print("Cerrando sistema...")
+    time.sleep(1)
 
 
 def registrar_ingreso(espacios, clientes, ocupacion, estadisticas):
