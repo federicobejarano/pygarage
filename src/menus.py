@@ -1,3 +1,16 @@
+from datetime import datetime
+
+from src.contratos import (
+    ACCION_INGRESO,
+    FORMATO_FECHA_HORA,
+    FORMATO_FECHA,
+)
+from src.validaciones import validar_dni, validar_nombre, validar_codigo_espacio
+from src.espacios import listar_disponibles, sugerir_espacio
+from src.clientes import buscar_cliente, registrar_cliente
+from src.movimientos import registrar_movimiento
+from src.estadisticas import actualizar_por_ingreso
+
 """Presentacion por consola y flujos de operaciones."""
 
 
