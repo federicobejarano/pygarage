@@ -1,0 +1,18 @@
+{
+  "12345678": {
+    "nombre": "Juan Perez",
+    "total_horas": 15
+  },
+  "87654321": {
+    "nombre": "Maria Lopez",
+    "total_horas": 4
+  },
+  "23456789": {
+    "nombre": "Carlos Gomez",
+    "total_horas": 9
+  },
+  "34567890": {
+    "nombre": "Lucia Fernandez",
+    "total_horas": 22
+  }
+}

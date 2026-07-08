@@ -1,0 +1,49 @@
+{
+  "por_fecha": {
+    "2026-07-08": {
+      "ingresos": 6,
+      "egresos": 1,
+      "total_horas": 3
+    }
+  },
+  "por_mes": {
+    "2026-06": {
+      "egresos": 180,
+      "total_horas": 540
+    },
+    "2026-07": {
+      "egresos": 1,
+      "total_horas": 3
+    }
+  },
+  "por_dia_semana": {
+    "lunes": {
+      "egresos": 40,
+      "total_horas": 130
+    },
+    "martes": {
+      "egresos": 38,
+      "total_horas": 110
+    },
+    "miercoles": {
+      "egresos": 42,
+      "total_horas": 126
+    },
+    "jueves": {
+      "egresos": 36,
+      "total_horas": 100
+    },
+    "viernes": {
+      "egresos": 55,
+      "total_horas": 190
+    },
+    "sabado": {
+      "egresos": 60,
+      "total_horas": 210
+    },
+    "domingo": {
+      "egresos": 22,
+      "total_horas": 70
+    }
+  }
+}
